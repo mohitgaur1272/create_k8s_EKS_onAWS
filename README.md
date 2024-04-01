@@ -60,6 +60,11 @@ aws eks update-kubeconfig --region us-east-1 --name w3cluster
 eksctl delete nodegroup --cluster w3cluster --region us-east-1 --name w3node
 ```
 
+### scale down cluster node 
+```
+eksctl scale nodegroup --cluster w3cluster --name w3node --nodes 0
+```
+
 
 ## delete cluster 
 
