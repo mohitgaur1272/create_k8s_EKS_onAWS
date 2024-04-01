@@ -40,11 +40,11 @@ eksctl version
 # now create cluster 
 
 ```
-eksctl create cluster --name w3cluster --region us-east-1 --nodegroup-name w3node --node-type t2.medium --nodes 2 --nodes-min 1 --nodes-max 3 --managed
+eksctl create cluster --name w3cluster --region ap-south-1 --nodegroup-name w3node --node-type t2.micro --nodes 2 --nodes-min 1 --nodes-max 3 --managed
 ```
 ### connect cluster with your server 
 ```
-aws eks update-kubeconfig --region us-east-1 --name w3cluster
+aws eks update-kubeconfig --region ap-south-1 --name w3cluster
 ```
 
 ### replace with your cluster desired cluster name 
@@ -57,7 +57,7 @@ aws eks update-kubeconfig --region us-east-1 --name w3cluster
 
 ## if you want to delete only nodegroup use this command 
 ```
-eksctl delete nodegroup --cluster w3cluster --region us-east-1 --name w3node
+eksctl delete nodegroup --cluster w3cluster --region ap-south-1 --name w3node
 ```
 
 ### scale down cluster node 
@@ -69,6 +69,6 @@ eksctl scale nodegroup --cluster w3cluster --name w3node --nodes 0
 ## delete cluster 
 
 ```
-eksctl delete cluster --name w3cluster --region us-east-1
+eksctl delete cluster --name w3cluster --region apsouth-1
 ```
 
