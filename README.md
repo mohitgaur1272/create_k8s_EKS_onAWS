@@ -69,6 +69,6 @@ eksctl scale nodegroup --cluster w3cluster --name w3node --nodes 0
 ## delete cluster 
 
 ```
-eksctl delete cluster --name w3cluster --region apsouth-1
+eksctl delete cluster --name w3cluster --region ap-south-1
 ```
 
