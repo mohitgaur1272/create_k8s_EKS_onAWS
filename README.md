@@ -12,6 +12,21 @@ sudo ./aws/install
 aws --version 
 ```
 
+## Create IAM role & attach to EKS Management Host
+### Create New Role using IAM service ( Select Usecase - ec2 )
+
+#### Add below permissions for the role
+```
+IAM - fullaccess
+VPC - fullaccess
+EC2 - fullaccess
+CloudFomration - fullaccess
+Administrator - acces
+```
+Enter Role Name (eksroleec2)
+
+Attach created role to EKS Management Host (Select EC2 => Click on Security => Modify IAM Role => attach IAM role we have created)
+### and you can use other method select your iam user and create access key and secret key 
 ### run this command for configure
 
 ```
@@ -38,10 +53,16 @@ eksctl version
 ```
 
 # now create cluster 
+## for Mumbai:
 
 ```
 eksctl create cluster --name w3cluster --region ap-south-1 --nodegroup-name w3node --node-type t2.micro --nodes 2 --nodes-min 1 --nodes-max 3 --managed
 ```
+## for N. Virgina:
+```
+eksctl create cluster --name w3cluster --region us-east-1 --nodegroup-name w3node --node-type t2.micro --nodes 2 --nodes-min 1 --nodes-max 3 --managed
+```
+
 ### connect cluster with your server 
 ```
 aws eks update-kubeconfig --region ap-south-1 --name w3cluster
