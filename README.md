@@ -17,10 +17,10 @@ aws --version
 
 #### Add below permissions for the role
 ```
-IAM - fullaccess
-VPC - fullaccess
-EC2 - fullaccess
-CloudFomration - fullaccess
+AmazonEC2ContainerRegistryReadOnly
+AmazonEKS_CNI_Policy
+AmazonEKSWorkerNodePolicy
+AmazonSSMManagedInstanceCore
 Administrator - acces
 ```
 Enter Role Name (eksroleec2)
