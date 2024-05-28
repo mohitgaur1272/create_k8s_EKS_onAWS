@@ -93,4 +93,20 @@ eksctl scale nodegroup --cluster w3cluster --name w3node --nodes 0
 ```
 eksctl delete cluster --name w3cluster --region ap-south-1
 ```
-
+## if you want to dlete old node and you want to create new node group with diffrence type of instance 
+```
+eksctl create nodegroup \
+    --cluster <your-cluster-name> \
+    --name <new-nodegroup-name> \
+    --node-type t2.medium \
+    --nodes <desired-node-count> \
+    --nodes-min <min-node-count> \
+    --nodes-max <max-node-count> \
+    --managed
+```
+## after that delete old nodegroup
+```
+eksctl delete nodegroup \
+    --cluster <your-cluster-name> \
+    --name <old-nodegroup-name>
+```
