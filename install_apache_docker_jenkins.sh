@@ -46,5 +46,5 @@ sudo apt install jenkins -y
 sudo systemctl start jenkins
 sudo systemctl enable jenkins' > /tmp/install_apache_docker_jenkins.sh
 
-sudo chmod +x /tmp/install_apache_docker_jenkins.sh
+sudo chmod $USER:$USER  /tmp/install_apache_docker_jenkins.sh
 sudo /tmp/install_apache_docker_jenkins.sh
